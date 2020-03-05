@@ -30,6 +30,7 @@ class InvitationManager
     public function join(Request $request, User $user, Team $team): void
     {
         if ($team->getMembers()->contains($user)) {
+            // todo trans
             $request->getSession()->getFlashBag()->add('warning', sprintf('Vous êtes déjà membre du groupe de %s.', $team->getCreator()->getUsername()));
             return;
         }
@@ -38,6 +39,7 @@ class InvitationManager
 
         $this->entityManager->flush();
 
+        // todo trans
         $request->getSession()->getFlashBag()->add('success', sprintf('Vous êtes désormais membre du groupe de %s.', $team->getCreator()->getUsername()));
 
         // Roles of users may have changed if joining its first group, so let's refresh its token to avoid logout

@@ -1,0 +1,2 @@
+validation:
+    password_length: 'Votre mot de passe doit contenir au moins {{ limit }} caractères'

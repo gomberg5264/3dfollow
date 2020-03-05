@@ -63,6 +63,7 @@ class PrintObjectController extends AbstractController
                 return $this->redirectToRoute('print_object_index');
             }
 
+            // todo trans
             $form->addError(new FormError('Could not estimate the quantity of filament used for this print. Either upload a valid .gcode file or manually fill weight, length and cost of filament used'));
         }
 
@@ -93,6 +94,7 @@ class PrintObjectController extends AbstractController
                 return $this->redirectToRoute('print_object_index');
             }
 
+            // todo trans
             $form->addError(new FormError('Could not estimate the quantity of filament used for this print. Either upload a valid .gcode file or manually fill weight, length and cost of filament used'));
         }
 

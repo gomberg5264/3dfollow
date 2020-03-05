@@ -77,6 +77,7 @@ class AppLoginFormAuthenticator extends AbstractFormLoginAuthenticator implement
 
         if (!$user) {
             // fail authentication with a custom error
+            // todo trans
             throw new CustomUserMessageAuthenticationException('Username could not be found.');
         }
 

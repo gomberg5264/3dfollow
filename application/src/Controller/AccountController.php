@@ -46,6 +46,7 @@ class AccountController extends AbstractController
                         )
                     );
                 } else {
+                    // todo trans
                     $form->get('oldPassword')->addError(new FormError('Veuillez saisir votre mot de passe actuel'));
                     $isValid = false;
                 }
@@ -59,6 +60,7 @@ class AccountController extends AbstractController
 
                 $this->getDoctrine()->getManager()->flush();
 
+                // todo trans
                 $this->addFlash('success', 'Compte mis à jour');
 
                 $tokenRefresher->refresh($user, $request);

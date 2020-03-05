@@ -59,6 +59,7 @@ class TeamController extends AbstractController
         $token = new CsrfToken('team_generate_join_token', $request->request->get('token'));
 
         if (!$csrfTokenManager->isTokenValid($token)) {
+            // todo trans
             $this->addFlash('danger', 'Invalid CSRF token');
 
             return $this->redirectToRoute('team_index');
